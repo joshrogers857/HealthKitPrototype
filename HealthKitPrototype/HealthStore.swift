@@ -14,6 +14,7 @@ class HealthStore {
     static let shared = HealthStore()
     
     private(set) var store: HKHealthStore?
+    private(set) var activeCalories: Double?
     
     private init() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -33,15 +34,16 @@ class HealthStore {
                         //store does not exist
                         self.store = nil
                     } else {
-                        self.testQuery()
+                        self.activeCaloriesQuery()
                     }
             }
         } else {
             store = nil
         }
+    
     }
     
-    func testQuery() {
+    private func activeCaloriesQuery() {
         guard let activeEnergyType = HKSampleType.quantityType(
             forIdentifier: .activeEnergyBurned
         ) else {
@@ -49,29 +51,36 @@ class HealthStore {
             fatalError("*** Unable to get the active energy type ***")
         }
         
-        let query = HKSampleQuery(
-            sampleType: activeEnergyType,
-            predicate: nil,
-            limit: Int(HKObjectQueryNoLimit),
-            sortDescriptors: nil
-        ) {
-            query, results, error in
+        let calendar = NSCalendar.current
+        let now = Date()
+        let components = calendar.dateComponents([.year, .month, .day], from: now)
             
-            guard let samples = results as? [HKQuantitySample] else {
-                // Handle any errors here.
+        guard let startDate = calendar.date(from: components) else {
+            fatalError("*** Unable to create the start date ***")
+        }
+         
+        guard let endDate = calendar.date(byAdding: .day, value: 1, to: startDate) else {
+            fatalError("*** Unable to create the end date ***")
+        }
+
+        let today = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+        
+        let query = HKStatisticsQuery(
+            quantityType: activeEnergyType,
+            quantitySamplePredicate: today,
+            options: .cumulativeSum
+        ) { (query, statisticsOrNil, errorOrNil) in
+            
+            guard let statistics = statisticsOrNil else {
+                self.activeCalories = 0.0
                 return
             }
             
-            for sample in samples {
-                print(sample)
-                print()
-            }
-            
-            // The results come back on an anonymous background queue.
-            // Dispatch to the main queue before modifying the UI.
+            let sum = statistics.sumQuantity()
+            let totalActiveCalories = sum?.doubleValue(for: HKUnit.largeCalorie())
             
             DispatchQueue.main.async {
-                // Update the UI here.
+                self.activeCalories = totalActiveCalories
             }
         }
         

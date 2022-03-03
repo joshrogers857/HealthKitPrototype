@@ -9,21 +9,20 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    @State private var activeCalories: HKQuantitySample?
-    @State private var basalCalories: HKQuantitySample?
+    
+    private var store = HealthStore.shared
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("Active calories burned: ").padding()
+            Text("Active calories burned: \(store.activeCalories ?? 69)")
+                .padding()
             
-            Text("Basal calories burned: ").padding()
+            Text("Basal calories burned: ")
+                .padding()
             
-            Text("Total calories burned: ").padding()
+            Text("Total calories burned: ")
+                .padding()
         }
-    }
-    
-    init() {
-        HealthStore.shared.store
     }
 }
 
