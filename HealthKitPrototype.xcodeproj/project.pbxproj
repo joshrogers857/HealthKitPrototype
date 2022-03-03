@@ -11,6 +11,8 @@
 		BD8042FC27D0D9E700A1EFCF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8042FB27D0D9E700A1EFCF /* ContentView.swift */; };
 		BD8042FE27D0D9E700A1EFCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8042FD27D0D9E700A1EFCF /* Assets.xcassets */; };
 		BD80430127D0D9E700A1EFCF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD80430027D0D9E700A1EFCF /* Preview Assets.xcassets */; };
+		BDB38D2927D0F9FD00416293 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDB38D2827D0F9FD00416293 /* HealthKit.framework */; };
+		BDB38D2D27D0FD8300416293 /* HealthStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB38D2C27D0FD8300416293 /* HealthStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		BD8042FB27D0D9E700A1EFCF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BD8042FD27D0D9E700A1EFCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD80430027D0D9E700A1EFCF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BDB38D2627D0F9FD00416293 /* HealthKitPrototype.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealthKitPrototype.entitlements; sourceTree = "<group>"; };
+		BDB38D2827D0F9FD00416293 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		BDB38D2C27D0FD8300416293 /* HealthStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDB38D2927D0F9FD00416293 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +43,7 @@
 			children = (
 				BD8042F827D0D9E700A1EFCF /* HealthKitPrototype */,
 				BD8042F727D0D9E700A1EFCF /* Products */,
+				BDB38D2727D0F9FD00416293 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,10 +58,12 @@
 		BD8042F827D0D9E700A1EFCF /* HealthKitPrototype */ = {
 			isa = PBXGroup;
 			children = (
+				BDB38D2627D0F9FD00416293 /* HealthKitPrototype.entitlements */,
 				BD8042F927D0D9E700A1EFCF /* HealthKitPrototypeApp.swift */,
 				BD8042FB27D0D9E700A1EFCF /* ContentView.swift */,
 				BD8042FD27D0D9E700A1EFCF /* Assets.xcassets */,
 				BD8042FF27D0D9E700A1EFCF /* Preview Content */,
+				BDB38D2C27D0FD8300416293 /* HealthStore.swift */,
 			);
 			path = HealthKitPrototype;
 			sourceTree = "<group>";
@@ -65,6 +74,14 @@
 				BD80430027D0D9E700A1EFCF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BDB38D2727D0F9FD00416293 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDB38D2827D0F9FD00416293 /* HealthKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8042FC27D0D9E700A1EFCF /* ContentView.swift in Sources */,
+				BDB38D2D27D0FD8300416293 /* HealthStore.swift in Sources */,
 				BD8042FA27D0D9E700A1EFCF /* HealthKitPrototypeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,12 +284,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthKitPrototype/HealthKitPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4AS9B963FQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Display calorie information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -295,12 +315,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = HealthKitPrototype/HealthKitPrototype.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"HealthKitPrototype/Preview Content\"";
 				DEVELOPMENT_TEAM = 4AS9B963FQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Display calorie information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
