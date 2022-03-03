@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>9C4C467C-3A1B-45BF-915D-8F0AA2EC60E8</key>
+		<key>AE4CCE49-5FA1-4F7C-AB2C-EA6F12677883</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>9C4C467C-3A1B-45BF-915D-8F0AA2EC60E8.xcactivitylog</string>
+			<string>AE4CCE49-5FA1-4F7C-AB2C-EA6F12677883.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,47 @@
 			<key>signature</key>
 			<string>Run HealthKitPrototype</string>
 			<key>timeStartedRecording</key>
-			<real>668029120.38315797</real>
+			<real>668041251.586555</real>
 			<key>timeStoppedRecording</key>
-			<real>668029219.87008703</real>
+			<real>668041260.57081497</real>
 			<key>title</key>
 			<string>Run HealthKitPrototype</string>
 			<key>uniqueIdentifier</key>
-			<string>9C4C467C-3A1B-45BF-915D-8F0AA2EC60E8</string>
+			<string>AE4CCE49-5FA1-4F7C-AB2C-EA6F12677883</string>
+		</dict>
+		<key>C430B080-FF12-4D5D-A325-2ABC5AAA7C8D</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>C430B080-FF12-4D5D-A325-2ABC5AAA7C8D.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HealthKitPrototype project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HealthKitPrototype</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run HealthKitPrototype</string>
+			<key>timeStartedRecording</key>
+			<real>668041501.23690701</real>
+			<key>timeStoppedRecording</key>
+			<real>668041541.209427</real>
+			<key>title</key>
+			<string>Run HealthKitPrototype</string>
+			<key>uniqueIdentifier</key>
+			<string>C430B080-FF12-4D5D-A325-2ABC5AAA7C8D</string>
 		</dict>
 	</dict>
 </dict>

@@ -9,19 +9,27 @@ import SwiftUI
 import HealthKit
 
 struct ContentView: View {
-    
-    private var store = HealthStore.shared
+    @ObservedObject var healthStore = HealthStore.shared
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("Active calories burned: \(store.activeCalories ?? 69)")
-                .padding()
+            if(healthStore.store == nil) {
+                Text("HealthStore unavailable")
+                    .foregroundColor(.red)
+                    .fontWeight(.bold)
+                    .padding()
+            } else {
+                Text("Active calories burned: \(healthStore.activeCalories)")
+                    .padding()
+                            
+                Text("Basal calories burned: \(healthStore.basalCalories)")
+                    .padding()
+                            
+                Text("Total calories burned: \(healthStore.totalCalories)")
+                    .padding()
+            }
             
-            Text("Basal calories burned: ")
-                .padding()
             
-            Text("Total calories burned: ")
-                .padding()
         }
     }
 }

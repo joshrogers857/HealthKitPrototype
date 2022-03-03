@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>5E09F720-788A-4223-9194-6606F81B75B7</key>
+		<key>48F609B2-C57E-4F70-B025-2BA3EB05FB3B</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
 			<key>fileName</key>
-			<string>5E09F720-788A-4223-9194-6606F81B75B7.xcactivitylog</string>
+			<string>48F609B2-C57E-4F70-B025-2BA3EB05FB3B.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,13 +32,47 @@
 			<key>signature</key>
 			<string>Build HealthKitPrototype</string>
 			<key>timeStartedRecording</key>
-			<real>668029119.76479006</real>
+			<real>668041315.13625705</real>
 			<key>timeStoppedRecording</key>
-			<real>668029120.38219404</real>
+			<real>668041316.05263102</real>
 			<key>title</key>
 			<string>Build HealthKitPrototype</string>
 			<key>uniqueIdentifier</key>
-			<string>5E09F720-788A-4223-9194-6606F81B75B7</string>
+			<string>48F609B2-C57E-4F70-B025-2BA3EB05FB3B</string>
+		</dict>
+		<key>A7779D3E-1591-48E8-A442-9C177E6561B8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A7779D3E-1591-48E8-A442-9C177E6561B8.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>HealthKitPrototype project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>HealthKitPrototype</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build HealthKitPrototype</string>
+			<key>timeStartedRecording</key>
+			<real>668041499.80366099</real>
+			<key>timeStoppedRecording</key>
+			<real>668041501.22988296</real>
+			<key>title</key>
+			<string>Build HealthKitPrototype</string>
+			<key>uniqueIdentifier</key>
+			<string>A7779D3E-1591-48E8-A442-9C177E6561B8</string>
 		</dict>
 	</dict>
 </dict>
